@@ -19,6 +19,10 @@ jobs:
       - name: Login to AWS ECR
         id: login-ecr
         uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-1
       - name: Build, push docker image
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
