@@ -43,6 +43,7 @@ jobs:
           script: |-
             sudo apt update
             sudo apt install docker.io -y
+            sudo apt-get install zip unzip -y
             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
             unzip awscliv2.zip  # Extract the AWS CLI installer
             sudo ./aws/install 
